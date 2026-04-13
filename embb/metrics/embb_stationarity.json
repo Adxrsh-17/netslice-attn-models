@@ -1,0 +1,51 @@
+{
+  "throughput": {
+    "adf_stat": -5.518038997107301,
+    "adf_pval": 1.9052952963635286e-06,
+    "kpss_stat": 6.465008173427719,
+    "kpss_pval": 0.01,
+    "verdict": "Mixed"
+  },
+  "packets": {
+    "adf_stat": -10.674387286677394,
+    "adf_pval": 4.089249213384705e-19,
+    "kpss_stat": 0.3578028642617065,
+    "kpss_pval": 0.09534359299064375,
+    "verdict": "Stationary"
+  },
+  "jitter": {
+    "adf_stat": -117.41184629194477,
+    "adf_pval": 0.0,
+    "kpss_stat": 0.18824408069251397,
+    "kpss_pval": 0.1,
+    "verdict": "Stationary"
+  },
+  "latency": {
+    "adf_stat": -12.802077290981833,
+    "adf_pval": 6.720792094803463e-24,
+    "kpss_stat": 3.1384339093770444,
+    "kpss_pval": 0.01,
+    "verdict": "Mixed"
+  },
+  "reliability": {
+    "adf_stat": -12.832759700191794,
+    "adf_pval": 5.8261361548289755e-24,
+    "kpss_stat": 0.10409221705820573,
+    "kpss_pval": 0.1,
+    "verdict": "Stationary"
+  },
+  "congestion": {
+    "adf_stat": -7.179207746732579,
+    "adf_pval": 2.6771768067216437e-10,
+    "kpss_stat": 0.38653920872584036,
+    "kpss_pval": 0.08295723761817225,
+    "verdict": "Stationary"
+  },
+  "complexity": {
+    "adf_stat": -5.161510137466213,
+    "adf_pval": 1.0530420888491374e-05,
+    "kpss_stat": 1.5545365703344904,
+    "kpss_pval": 0.01,
+    "verdict": "Mixed"
+  }
+}

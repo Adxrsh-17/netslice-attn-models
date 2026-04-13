@@ -1,0 +1,51 @@
+{
+  "throughput": {
+    "adf_stat": -2.113651510761605,
+    "adf_pval": 0.23906080998690854,
+    "kpss_stat": 2.682839162492556,
+    "kpss_pval": 0.01,
+    "verdict": "Non-Stationary"
+  },
+  "packets": {
+    "adf_stat": -46.490443231015384,
+    "adf_pval": 0.0,
+    "kpss_stat": 0.1855714169125692,
+    "kpss_pval": 0.1,
+    "verdict": "Stationary"
+  },
+  "jitter": {
+    "adf_stat": null,
+    "adf_pval": null,
+    "kpss_stat": null,
+    "kpss_pval": null,
+    "verdict": "Flat"
+  },
+  "latency": {
+    "adf_stat": null,
+    "adf_pval": null,
+    "kpss_stat": null,
+    "kpss_pval": null,
+    "verdict": "Flat"
+  },
+  "reliability": {
+    "adf_stat": null,
+    "adf_pval": null,
+    "kpss_stat": null,
+    "kpss_pval": null,
+    "verdict": "Flat"
+  },
+  "congestion": {
+    "adf_stat": null,
+    "adf_pval": null,
+    "kpss_stat": null,
+    "kpss_pval": null,
+    "verdict": "Flat"
+  },
+  "complexity": {
+    "adf_stat": -90.13020551684758,
+    "adf_pval": 0.0,
+    "kpss_stat": 0.0768353977127911,
+    "kpss_pval": 0.1,
+    "verdict": "Stationary"
+  }
+}

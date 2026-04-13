@@ -1,0 +1,28 @@
+# 5G Network Traffic Forecasting - Backend Dependencies
+# =====================================================
+# Course: 22AIE463 - Time Series Analysis
+# Group 5, AIE Batch B
+
+# Core Framework
+fastapi==0.109.2
+uvicorn[standard]==0.27.1
+
+# Data Processing
+numpy==1.26.4
+pandas==2.2.0
+
+# File Handling
+python-multipart==0.0.9
+aiofiles==23.2.1
+
+# Optional: Deep Learning (uncomment when using real models)
+# tensorflow==2.15.0
+# keras==2.15.0
+# torch==2.2.0
+
+# Optional: Additional ML Libraries
+# scikit-learn==1.4.0
+# statsmodels==0.14.1
+
+# Development
+pydantic==2.6.1

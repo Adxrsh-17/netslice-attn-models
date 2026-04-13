@@ -1,0 +1,32 @@
+# Python cache and virtual environments
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# Notebook files are kept locally; use script versions in /scripts for GitHub
+*.ipynb
+
+# OS/editor noise
+.DS_Store
+Thumbs.db
+.vscode/
+
+# Model and experiment artifacts
+**/models/*.h5
+**/metrics/*.npy
+**/metrics/*.csv
+**/plots/
+assets/models/
+assets/plots/
+assets/results/
+uploads/
+
+# Large datasets and archives
+36kpi_parquet/
+new_zip/
+new_zip.zip
+
+# Logs and temp files
+*.log
+*.tmp
