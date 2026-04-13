@@ -5,6 +5,7 @@ This repository contains a 5G network slice traffic forecasting project with:
 - `backend/` for API and inference services
 - `frontend/` for the web interface
 - `scripts/` for GitHub-ready Python script versions of notebook workflows
+- `metrics/` for centralized slice-wise metrics artifacts
 
 ## Notebook Conversion
 
@@ -26,5 +27,6 @@ python main.py
 
 ## Notes
 
-- Large datasets, trained model binaries, and generated metrics are git-ignored.
+- Metrics are now organized in a single structure: `metrics/embb`, `metrics/mmtc`, and `metrics/urllc`.
+- Large generated metrics arrays (`.npy`) and training histories (`.csv`) are git-ignored.
 - Keep generated outputs local unless you intentionally want to version them.

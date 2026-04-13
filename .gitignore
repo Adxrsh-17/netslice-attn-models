@@ -14,8 +14,8 @@ Thumbs.db
 
 # Model and experiment artifacts
 **/models/*.h5
-**/metrics/*.npy
-**/metrics/*.csv
+**/metrics/**/*.npy
+**/metrics/**/*.csv
 **/plots/
 assets/models/
 assets/plots/

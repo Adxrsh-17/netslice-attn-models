@@ -254,17 +254,29 @@ os.makedirs(ARCH_PAPERS_DIR, exist_ok=True)
 
 # Plots and results directories
 PLOTS_DIR = os.path.join(BACKEND_DIR_PATH, "assets", "plots")
-RESULTS_DIR = os.path.join(BACKEND_DIR_PATH, "assets", "results")
+LEGACY_RESULTS_DIR = os.path.join(BACKEND_DIR_PATH, "assets", "results")
+PROJECT_ROOT_DIR = os.path.dirname(BACKEND_DIR_PATH)
+METRICS_DIR = os.path.join(PROJECT_ROOT_DIR, "metrics")
 os.makedirs(PLOTS_DIR, exist_ok=True)
-os.makedirs(RESULTS_DIR, exist_ok=True)
+os.makedirs(LEGACY_RESULTS_DIR, exist_ok=True)
+os.makedirs(METRICS_DIR, exist_ok=True)
 for _sl in ["embb", "mmtc", "urllc"]:
     os.makedirs(os.path.join(PLOTS_DIR, _sl), exist_ok=True)
+    os.makedirs(os.path.join(METRICS_DIR, _sl), exist_ok=True)
 
 # Debug: Print paths on startup
 print(f"[DEBUG] Backend dir: {BACKEND_DIR_PATH}")
 print(f"[DEBUG] Architecture papers dir: {ARCH_PAPERS_DIR}")
 print(f"[DEBUG] Plots dir: {PLOTS_DIR}")
-print(f"[DEBUG] Results dir: {RESULTS_DIR}")
+print(f"[DEBUG] Metrics dir: {METRICS_DIR}")
+
+
+def _metric_file_path(slice_key: str, filename: str) -> str:
+    """Resolve a metric file path from the new slice-wise metrics layout with legacy fallback."""
+    primary = os.path.join(METRICS_DIR, slice_key, filename)
+    if os.path.exists(primary):
+        return primary
+    return os.path.join(LEGACY_RESULTS_DIR, filename)
 
 # Architecture papers mapping
 ARCHITECTURE_PAPERS = {
@@ -289,7 +301,7 @@ REFERENCES_DATA = [
 def load_real_metrics():
     """Load real metrics from webapp_metrics.json files produced by Kaggle notebooks."""
     for slice_key in ["embb", "mmtc", "urllc"]:
-        json_path = os.path.join(RESULTS_DIR, f"{slice_key}_webapp_metrics.json")
+        json_path = _metric_file_path(slice_key, f"{slice_key}_webapp_metrics.json")
         if not os.path.exists(json_path):
             print(f"[INFO] No real metrics for {slice_key} — using placeholder data")
             continue
@@ -945,7 +957,7 @@ async def get_tsa_results(slice_type: str):
     slice_type = slice_type.lower()
     result = {}
     for fname in [f"{slice_type}_webapp_metrics.json", f"{slice_type}_stationarity.json", f"{slice_type}_var_info.json"]:
-        fpath = os.path.join(RESULTS_DIR, fname)
+        fpath = _metric_file_path(slice_type, fname)
         if os.path.exists(fpath):
             with open(fpath, 'r') as f:
                 result[fname.replace(f"{slice_type}_", "").replace(".json", "")] = json.load(f)
